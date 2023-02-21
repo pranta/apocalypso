@@ -2,7 +2,7 @@
 #--------------------------------------------------------------------------------
 # """run_vault_dr.py: Runs Vault Disaster Recovery"""
 # __author__      = "Pranta Das"
-# __copyright__   = "(C) Copyright 2020, Hulu"
+# __copyright__   = "(C) Copyright 2020"
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
