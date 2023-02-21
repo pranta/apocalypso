@@ -86,7 +86,7 @@ $./run_vault_dr.py failover test
 ```
 The output you see may look something like this:
 ```
-$ ./run_vault_dr.py failover 
+$ ./run_vault_dr.py failover test
 [Wed, 18 Sep 2019 17:02:15] *** About to start Vault Disaster Recovery Operation. Failing over from https://internal-us-west-2-test-vault-438731756.us-west-2.elb.amazonaws.com to https://internal-us-east-1-test-vault-2124428973.us-east-1.elb.amazonaws.com
 [Wed, 18 Sep 2019 17:02:15] *** About to check the replication status on the secondary cluster: https://internal-us-east-1-test-vault-2124428973.us-east-1.elb.amazonaws.com
 [Wed, 18 Sep 2019 17:02:15] *** About to start the DR token generation process on the secondary cluster: https://internal-us-east-1-test-vault-2124428973.us-east-1.elb.amazonaws.com
