@@ -2,7 +2,7 @@
 (* Apocalypso because it is an orchestrated (calypso) recovery of an apocalyptic disaster  (•◡•)) 
 
 # **Background**
-While HashiCorp provides documentation for Vault Disaster Recovery, they do not provide an out-of-the-box automation solution. A Disaster event, such as an entire AWS region going down, is a pretty catastrophic scenario when operator nerves will be tested. In such as situation, leaving such an important operation such as Vault Disaster Recovery as a series of manual tasks can be pretty dangerous and thus inherently error-prone.
+While HashiCorp provides documentation for Vault Disaster Recovery, they do not provide an out-of-the-box automation solution. A Disaster event, such as an entire AWS region going down, is a pretty catastrophic scenario when operator nerves will be tested. In such a situation, leaving such an important operation such as Vault Disaster Recovery as a series of manual tasks can be pretty dangerous and thus inherently error-prone.
 
 We decided to automate the recovery process by failing over to another passive secondary cluster located in an alternate AWS region. In the best case scenario, the cross-region cluster failover takes 70 seconds (out of which 60 seconds belongs to a deliberate sleep for tolerating a DNS propagation delay of the update of the cluster DNS CNAME from the primary ELB A-record to the secondary ELB A-record). However, this 70 seconds downtime is within the a 90-day error budget of 77 seconds (or 1 minute 17 seconds). The error budget of 1 minute 17 seconds for a 90 day window is derived from the fact that for a target SLO of 99.999% availability, the maximum downtime each day is 864.00 milliseconds (or 0.864 seconds) and thus:
 
