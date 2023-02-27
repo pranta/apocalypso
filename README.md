@@ -31,7 +31,7 @@ HTTPS:8200/v1/sys/health?standbyok=true&drsecondarycode=200
 # **User Guide**
 
 ## 1. **Environment variables:**
-You need to set these environment variables, prior to invoking the python script based (so as to ensure a non-interactive execution). Otherwise, you will be prompted interactively for this information.
+You need to set these environment variables, prior to invoking the python script (so as to ensure a non-interactive execution). Otherwise, you will be prompted interactively for this information.
 
 Environment variables to be set before invoking run_vault_dr.py
 ```
