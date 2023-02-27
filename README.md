@@ -23,11 +23,24 @@ Hopefully, there will be contributions from the community that will allow people
 * Google Cloud Platform
 * vmWare
 * etc.
-
-# A note about ELB health rules in order to communicate with secondary Vault cluster
-Once you have enabled DR replication on the secondary Vault cluster, it becomes dormant/unresponsive to the Elastic Load Balancer (and thus any script trying to reach it) unless you explicitly set the ELB Health Check to include a DR secondary code equal to 200 :
-
+# So, what were the “Gotchas” we encountered
+during Vault DR automation?
+1. Once you have enabled DR replication on the secondary cluster, it becomes
+dormant/unresponsive to the Elastic Load Balancer (and thus any script) unless you
+explicitly set the ELB Health Check to include a DR secondary code of 200:
 HTTPS:8200/v1/sys/health?standbyok=true&drsecondarycode=200
+2. There is no REST API equivalent of the Vault CLI command:
+vault operator generate-root -dr-token decode="dKNQqNmh3JfJcSZdGlkttQ==" otp="HenFLWmt0AgrjWJp/RECzQ==”
+so we had to write our own decode and xor function that used the supplied encoded
+token and the One-Time-Password to get the decoded DR token:
+dr_operation_token = xor_bytes(base64.b64decode(response_dict.get('encoded_token') + '==').decode(), otp)
+3. In spite of setting a low TTL on a DNS record, DNS clients violate the specification and
+cache DNS names beyond the TTL. Hence when failing over from the primary to the
+secondary cluster and after changing the DNS CNAME to a new A-Record, the old
+primary was not immediately ready to receive the “update primary” command since it
+had not flushed it’s DNS cache. This led us to use an exponential backoff retry scheme
+in the script that eventually succeeds
+
 # **User Guide**
 
 ## 1. **Environment variables:**
