@@ -23,7 +23,7 @@ Hopefully, there will be contributions from the community that will allow people
 * Google Cloud Platform
 * vmWare
 * etc.
-Steps to achieve Vault Disaster Recovery
+# Steps to achieve Vault Disaster Recovery
 PREPARATORY STEPS    
 * STEP 1: ENABLE DR REPLICATION ON PRIMARY CLUSTER    
 * STEP 2: ENABLE DR REPLICATION ON SECONDARY CLUSTER
