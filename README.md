@@ -29,20 +29,19 @@ PREPARATORY STEPS   
 * STEP 2: ENABLE DR REPLICATION ON SECONDARY CLUSTER
 ACTUAL DISASTER RECOVERY STEPS
 * STEP 3: PROMOTE DR SECONDARY TO PRIMARY
- ❖ Step 3-A: Ensure that the secondary has replication in the correct state 
- ❖ Step 3-B: Cancel any DR token generation process on the secondary if any are active 
- ❖ Step 3-C: Start the DR operation token generation process 
- ❖ Step 3-D: Continue the DR token generation process by prompting for the Recovery keys 
- ❖ Step 3-E: Finally promote the secondary to primary    
+ ** ❖ Step 3-A: Ensure that the secondary has replication in the correct state 
+ ** ❖ Step 3-B: Cancel any DR token generation process on the secondary if any are active 
+ ** ❖ Step 3-C: Start the DR operation token generation process 
+ ** ❖ Step 3-D: Continue the DR token generation process by prompting for the Recovery keys 
+ ** ❖ Step 3-E: Finally promote the secondary to primary    
 * STEP 4: UPDATE THE DNS CNAME TO POINT TO THE NEW PRIMARY    
 * STEP 5: DEMOTE DR PRIMARY TO SECONDARY
- ❖ Step 5-A: Demote the primary to a secondary 
- ❖ Step 5-B: Generate a new secondary activation token on the new secondary cluster 
- ❖ Step 5-C: Generate a DR token on the new secondary cluster 
- ❖ Step 5-D: Continue the DR token generation process by prompting for the Recovery keys 
- ❖ Step 5-E: Update DR Secondary with new Secondary token
-# So, what were the “Gotchas” we encountered
-during Vault DR automation?
+ ** ❖ Step 5-A: Demote the primary to a secondary 
+ ** ❖ Step 5-B: Generate a new secondary activation token on the new secondary cluster 
+ ** ❖ Step 5-C: Generate a DR token on the new secondary cluster 
+ ** ❖ Step 5-D: Continue the DR token generation process by prompting for the Recovery keys 
+ ** ❖ Step 5-E: Update DR Secondary with new Secondary token
+# So, what were the “Gotchas” we encountered during Vault DR automation?
 1. Once you have enabled DR replication on the secondary cluster, it becomes
 dormant/unresponsive to the Elastic Load Balancer (and thus any script) unless you
 explicitly set the ELB Health Check to include a DR secondary code of 200:
