@@ -17,7 +17,7 @@ Vault v1.1.2+prem ('c1bd8914ddf4a3e3f7d0b683b0c5670076166932')
 
 # **Based on Amazon Web Services**
 While Vault customers may differ in what they use in terms of public cloud, DNS server, etc., this code depends on Amazon Web Services (AWS) and Route 53 for DNS.
-![](images/Sample Vault Architecture.png)
+![](images/Sample%20Vault%20Architecture.png)
 Hopefully, there will be contributions from the community that will allow people to extend this solution for other environments such as:
 * Microsoft Azure
 * Google Cloud Platform
