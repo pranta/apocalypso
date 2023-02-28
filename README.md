@@ -72,6 +72,7 @@ export VAULT_RECOVERY_KEY_2=<...>
 export VAULT_RECOVERY_KEY_3=<...>
 export AWS_ACCESS_KEY_ID=<...>
 export AWS_SECRET_ACCESS_KEY=<...>
+history -c
 ```
 ## 2. **Prerequisites:** 
 May need to install Python3.6 and the Python libraries specified in the file requirements.txt. Ubuntu 17.10, Ubuntu 18.04 (and above) come with Python 3.6 by default. If not, installation instructions for that are here: https://realpython.com/installing-python/#ubuntu 
