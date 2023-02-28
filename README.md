@@ -27,6 +27,7 @@ Hopefully, there will be contributions from the community that will allow people
 PREPARATORY STEPS    
 * STEP 1: ENABLE DR REPLICATION ON PRIMARY CLUSTER    
 * STEP 2: ENABLE DR REPLICATION ON SECONDARY CLUSTER
+
 ACTUAL DISASTER RECOVERY STEPS
 * STEP 3: PROMOTE DR SECONDARY TO PRIMARY
  * ❖ Step 3-A: Ensure that the secondary has replication in the correct state 
